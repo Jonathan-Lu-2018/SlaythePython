@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+        <title> Flask Website - {{ title }}</title>
+    {% else %}
+        <title>Flask Website</title>
+    {% endif %}
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+     <!-- Navagation Bar for every page (This gets extended to other html pages) --> 
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    	
+    	<a type="button" class="navbar-brand btn" href="{{ url_for('welcome') }}"> Welcome </a>
+		{% if current_user.is_authenticated %}
+			 <a type="button" class="navbar-brand btn" href="{{ url_for('meetings') }}"> Meetings </a>
+			 <a class="navbar-brand btn" href="{{ url_for('settings') }}"> Settings </a>
+			 <a class="navbar-brand btn" href="{{ url_for('logout') }}"> Logout </a>
+		{% else %}
+			 <a type="button" class="navbar-brand btn" href="{{ url_for('login') }}"> Login </a>
+			 <a type="button" class="navbar-brand btn" href="{{ url_for('register') }}"> Register </a>
+			 <a type="button" class="navbar-brand btn" href="{{ url_for('createEvent') }}"> Create Event </a>
+
+		{% endif %}
+    	
+
+    </nav>
+</head>
+<body>
+	{% block content %}
+
+	{% endblock %}
+	
+</body>
+</html>

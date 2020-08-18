@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div align = "center">	
+		<h1> Welcome to Slay the Python! </h1>
+	</div>
+	<img src="{{url_for('static', filename='sillypython.jpg')}}" class="center" width="500" alt="I'm a snake picture">
+	<div class="container">
+		<h1 class="border border-info rounded-pill ">{{ intro.title }} </h1>
+		<strong><p id="sen">{{ intro.content1 }}</p></strong>
+		<p>{{ intro.content2 }}</p>
+		<p id="sen">
+			What're you waiting for? <a href="{{ url_for('register') }}">Register now!</a>
+		</p>
+	</div>
+	<style>
+		#sen{
+			color:black;
+			text-align:center;
+		}
+		h1{
+			color:royalblue;
+			text-align: center;
+			margin-top: 30px;
+
+		}
+		.center{
+			display:block;
+			margin-left:auto;
+			margin-right: auto;
+			width: 50%;
+		}
+	 </style>
+{% endblock %}

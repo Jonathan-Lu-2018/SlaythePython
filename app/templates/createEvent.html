@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <div align = "center">  
+        <h1> Create Event </h1>
+        <form action="/createEvent" method="POST" novalidate>
+            {{ form.hidden_tag() }}
+
+            <p>
+                {{ form.name.label }}
+                {{ form.name(size = 32) }}
+            </p>
+
+            <p>
+                {{ form.title.label }}        
+                {{ form.title(size = 32) }}   
+            </p>
+
+            <p>
+                {{ form.description.label }}        
+                {{ form.description(size = 32) }}   
+            </p>
+
+            <p>
+                {{ form.date.label() }}
+                {{ form.date(size = 32) }}
+            </p>
+
+            <p>
+                {{ form.startTime.label()}}
+                {{ form.startTime }}
+            </p>
+           
+            <p>
+                {{ form.endTime.label()}}
+                {{ form.endTime }}
+            </p>
+        
+            <p> {{ form.submit() }}</p>
+            <p>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>
+                                {{ message }}
+                            </p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </p>
+        </form>
+    </div>
+
+{% endblock %}

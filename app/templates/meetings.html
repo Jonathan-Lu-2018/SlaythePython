@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <div align = "center">  
+        <h1> You have successfully Signed In</h1>
+	</div>
+
+	<h2> Scheduled Appointments: </h2>
+
+	<style>
+		table, th, td {
+  			border: 1px solid black;
+  			border-collapse: collapse;
+		}
+	</style>
+	<table style='width: 100%'>
+		<tr>
+			<th> Date </th>
+			<th> Time </th>
+			<th> Guest Name </th>
+			<th> Title </th>
+			<th> Description </th>
+		</tr>
+
+		{% for event in events %}
+		<tr>
+			<td> {{ event.date }} </td>
+			<td> {{event.startTime}} - {{event.endTime}} </td>
+			<td> {{ event.name }} </td>
+			<td> {{ event.title }} </td>
+			<td> {{ event.description }} </td>
+		</tr>
+		{% endfor %}
+
+	</table>
+    
+{% endblock %}

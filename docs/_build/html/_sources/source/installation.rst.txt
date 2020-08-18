@@ -1,0 +1,34 @@
+How to install and run our application 
+======================================
+
+Welcome! Here's how to install and run our application.
+
+1. Install Git from ``https://git-scm.com/downloads``
+
+2. Install Python from the terminal
+
+    **Linux/WSL** ::
+
+        $ sudo apt-get install python
+    
+    **Mac** (Install Homebrew first) ::
+
+        $ brew install python
+
+3. Install package manager pip from the terminal ::
+
+    $ sudo apt install python-pip
+
+4. Install Flask and its extensions ::
+
+    $ pip install flask
+    $ pip install flask-wtf flask-sqlalchemy flask-login
+
+
+5. Clone our Repository from github (with HTTPS): ::
+
+    https://github.com/cmpe131-spring2020/team4StP.git
+
+6. Open the terminal and go to the project directory
+
+7. Type ``$ python run.py`` into the terminal
